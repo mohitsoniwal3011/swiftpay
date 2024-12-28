@@ -7,9 +7,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+@Data
 @Entity(name = "users")
 @Table(name = "users")
 @ToString
@@ -21,13 +23,12 @@ public class Users extends BaseResponse {
     private Long id;
 
     @Column(name = "username")
-    private String userName;
+    private String username;
 
     @Column(name = "email")
     private String email;
 
-    @JsonIgnore
     @Column(name = "password")
-    private transient String password;
+    private String password;
 
 }
